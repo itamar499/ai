@@ -162,6 +162,12 @@
             border-radius: 10px;
             margin-top: 3rem;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        #about:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         footer {
@@ -224,14 +230,66 @@
                 display: block;
             }
         }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scale-in {
+            transform: scale(0.9);
+            animation: scaleIn 0.5s forwards;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .delay {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>
+            <h1 class="fade-in">
                 איתמר טכנולוגיות
-                <span>פתרונות AI מתקדמים למחקר אקדמי</span>
+                <span class="fade-in">פתרונות טכנולגיים מתקדמים למחקר אקדמי</span>
             </h1>
             <nav>
                 <ul>
@@ -248,16 +306,16 @@
     </header>
     <main>
         <section id="tools">
-            <h2>כלי AI בתחום המחקר האקדמי</h2>
+            <h2>כלים חכמים ומשאבים למחקר אקדמי</h2>
             <div class="tools-grid">
                 <article class="tool-card">
-                    <h3>Zotero</h3>
+                    <h3>Google Scholar</h3>
                     <div class="tags">
-                        <span class="tag">ניהול מקורות</span>
-                        <span class="tag">ביבליוגרפיה</span>
+                        <span class="tag">חיפוש מאמרים</span>
+                        <span class="tag">אקדמיה</span>
                     </div>
-                    <p>כלי חינמי לניהול ציטוטים ומקורות, מאפשר לארגן מחקרים וליצור רשימות ביבליוגרפיות בקלות. כולל תוספים לדפדפן ולמעבד תמלילים.</p>
-                    <a href="https://www.zotero.org/" class="tool-link">למד עוד</a>
+                    <p>מנוע חיפוש אקדמי המאפשר גישה למאמרים אקדמיים.</p>
+                    <a href="https://scholar.google.com/" class="tool-link">למד עוד</a>
                 </article>
 
                 <article class="tool-card">
@@ -266,38 +324,48 @@
                         <span class="tag">עריכת טקסט</span>
                         <span class="tag">AI</span>
                     </div>
-                    <p>כלי AI לשיפור כתיבה, מספק הצעות לתיקון שגיאות דקדוק וסגנון כתיבה. מתאים במיוחד לכתיבה אקדמית באנגלית.</p>
+                    <p>כלי לשיפור כתיבה, מספק הצעות לתיקון שגיאות.</p>
                     <a href="https://www.grammarly.com/" class="tool-link">למד עוד</a>
                 </article>
 
                 <article class="tool-card">
-                    <h3>Scholarcy</h3>
+                    <h3>ChatGPT</h3>
                     <div class="tags">
-                        <span class="tag">סיכום מאמרים</span>
                         <span class="tag">AI</span>
+                        <span class="tag">שיחה</span>
                     </div>
-                    <p>כלי AI המסכם מאמרים אקדמיים ארוכים לנקודות עיקריות, מזהה מתודולוגיות מחקר ומסקנות מרכזיות.</p>
-                    <a href="https://www.scholarcy.com/" class="tool-link">למד עוד</a>
+                    <p>מודל שפה מתקדם המסייע בשאלות, כתיבה ויצירת תוכן.</p>
+                    <a href="https://www.openai.com/chatgpt" class="tool-link">למד עוד</a>
                 </article>
 
                 <article class="tool-card">
-                    <h3>Connected Papers</h3>
+                    <h3>EndNote</h3>
                     <div class="tags">
-                        <span class="tag">ויזואליזציה</span>
-                        <span class="tag">קשרי מחקר</span>
+                        <span class="tag">ניהול מקורות</span>
+                        <span class="tag">ביבליוגרפיה</span>
                     </div>
-                    <p>כלי לויזואליזציה של קשרים בין מאמרים אקדמיים, עוזר לגלות מחקרים רלוונטיים ולהבין את התפתחות התחום.</p>
-                    <a href="https://www.connectedpapers.com/" class="tool-link">למד עוד</a>
+                    <p>כלי לניהול ציטוטים ומקורות.</p>
+                    <a href="https://endnote.com/" class="tool-link">למד עוד</a>
                 </article>
 
                 <article class="tool-card">
-                    <h3>Writefull</h3>
+                    <h3>ResearchGate</h3>
                     <div class="tags">
-                        <span class="tag">כתיבה אקדמית</span>
-                        <span class="tag">AI</span>
+                        <span class="tag">רשת חברתית</span>
+                        <span class="tag">מחקר</span>
                     </div>
-                    <p>כלי AI המתמחה בשיפור כתיבה אקדמית, מציע תיקונים והצעות המבוססים על מאגר גדול של מאמרים אקדמיים.</p>
-                    <a href="https://writefull.com/" class="tool-link">למד עוד</a>
+                    <p>רשת חברתית לחוקרים המאפשרת שיתוף מאמרים.</p>
+                    <a href="https://www.researchgate.net/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Overleaf</h3>
+                    <div class="tags">
+                        <span class="tag">כתיבה</span>
+                        <span class="tag">LaTeX</span>
+                    </div>
+                    <p>פלטפורמת כתיבה בשיתוף פעולה עבור מסמכי LaTeX.</p>
+                    <a href="https://www.overleaf.com/" class="tool-link">למד עוד</a>
                 </article>
 
                 <article class="tool-card">
@@ -306,15 +374,145 @@
                         <span class="tag">חיפוש מאמרים</span>
                         <span class="tag">AI</span>
                     </div>
-                    <p>מנוע חיפוש אקדמי מבוסס AI המציע תוצאות מדויקות יותר וסינון חכם של מאמרים רלוונטיים.</p>
+                    <p>מנוע חיפוש אקדמי מבוסס AI המציע תוצאות מדויקות.</p>
                     <a href="https://www.semanticscholar.org/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Scopus</h3>
+                    <div class="tags">
+                        <span class="tag">מאגר מידע</span>
+                        <span class="tag">מחקר</span>
+                    </div>
+                    <p>מאגר מידע אקדמי עם גישה למאמרים ומחקרים.</p>
+                    <a href="https://www.scopus.com/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Coursera</h3>
+                    <div class="tags">
+                        <span class="tag">לימוד</span>
+                        <span class="tag">קורסים</span>
+                    </div>
+                    <p>פלטפורמת לימוד מקוונת עם קורסים אקדמיים.</p>
+                    <a href="https://www.coursera.org/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>edX</h3>
+                    <div class="tags">
+                        <span class="tag">לימוד</span>
+                        <span class="tag">קורסים</span>
+                    </div>
+                    <p>פלטפורמת לימוד מקוונת עם קורסים אקדמיים.</p>
+                    <a href="https://www.edx.org/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>DataCamp</h3>
+                    <div class="tags">
+                        <span class="tag">לימוד</span>
+                        <span class="tag">נתונים</span>
+                    </div>
+                    <p>פלטפורמת לימוד מקוונת לניתוח נתונים ומדעי הנתונים.</p>
+                    <a href="https://www.datacamp.com/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Mendeley</h3>
+                    <div class="tags">
+                        <span class="tag">ניהול מקורות</span>
+                        <span class="tag">שיתוף</span>
+                    </div>
+                    <p>כלי לניהול מקורות אקדמיים ושיתוף עם אחרים.</p>
+                    <a href="https://www.mendeley.com/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>JabRef</h3>
+                    <div class="tags">
+                        <span class="tag">ניהול מקורות</span>
+                        <span class="tag">ביבליוגרפיה</span>
+                    </div>
+                    <p>כלי לניהול ביבליוגרפיה בקוד פתוח, תומך בפורמטים שונים.</p>
+                    <a href="https://www.jabref.org/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Quillbot</h3>
+                    <div class="tags">
+                        <span class="tag">עריכת טקסט</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <p>כלי לשיפור כתיבה ופרפרזה של טקסטים.</p>
+                    <a href="https://quillbot.com/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Turnitin</h3>
+                    <div class="tags">
+                        <span class="tag">בדיקת פלגיאט</span>
+                        <span class="tag">אקדמיה</span>
+                    </div>
+                    <p>כלי לבדוק פלגיאט ולשפר את איכות הכתיבה.</p>
+                    <a href="https://www.turnitin.com/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Consensus</h3>
+                    <div class="tags">
+                        <span class="tag">סיכום</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <p>כלי AI המסכם דעות ומחקרים שונים בנושא מסוים, עוזר להבין את הקונצנזוס בתחום.</p>
+                    <a href="https://consensus.app/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Elicit</h3>
+                    <div class="tags">
+                        <span class="tag">מחקר</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <p>כלי המיועד לעזור לחוקרים לאסוף ולנתח מידע ממאמרים אקדמיים בצורה קלה ויעילה.</p>
+                    <a href="https://elicit.org/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Scrivener</h3>
+                    <div class="tags">
+                        <span class="tag">כתיבה</span>
+                        <span class="tag">ניהול פרויקטים</span>
+                    </div>
+                    <p>תוכנה לכתיבה וארגון פרויקטים ספרותיים ואקדמיים.</p>
+                    <a href="https://www.literatureandlatte.com/scrivener/overview" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Notion</h3>
+                    <div class="tags">
+                        <span class="tag">ניהול מידע</span>
+                        <span class="tag">שיתוף פעולה</span>
+                    </div>
+                    <p>פלטפורמת ניהול מידע ושיתוף פעולה בין צוותים.</p>
+                    <a href="https://www.notion.so/" class="tool-link">למד עוד</a>
+                </article>
+
+                <article class="tool-card">
+                    <h3>Web of Science</h3>
+                    <div class="tags">
+                        <span class="tag">מאגר מידע</span>
+                        <span class="tag">מחקר</span>
+                    </div>
+                    <p>מאגר מידע אקדמי עם גישה למאמרים ומחקרים.</p>
+                    <a href="https://www.webofscience.com/" class="tool-link">למד עוד</a>
                 </article>
             </div>
         </section>
 
         <section id="about">
-            <h2>עלינו</h2>
-            <p>איתמר טכנולוגיות הוא מיזם שמטרתו להנגיש כלי AI וטכנולוגיות מתקדמות לחוקרים ואנשי אקדמיה בישראל. אנחנו מאמינים שטכנולוגיה יכולה לשפר משמעותית את איכות המחקר האקדמי ולחסוך זמן יקר לחוקרים.</p>
+            <h2 class="fade-in">עלינו</h2>
+            <p class="fade-in delay">איתמר טכנולוגיות הוא מיזם שמטרתו להנגיש כלי AI וטכנולוגיות מתקדמות לחוקרים ואנשי אקדמיה בישראל. אנחנו מאמינים שטכנולוגיה יכולה לשפר משמעותית את איכות המחקר האקדמי ולחסוך זמן יקר לחוקרים.</p>
         </section>
     </main>
     <footer>
